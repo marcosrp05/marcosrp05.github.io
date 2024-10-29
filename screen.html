@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>screen</title>
+    <script>
+        window.onload=function(){
+            const elemento=document.documentElement;
+            document.querySelector("p").onclick=function(){
+                if (elemento.requestFullscreen) {
+                    elemento.requestFullscreen();
+                }else if(elemento.mozRequestFullscreen){
+                    elemento.mozRequestFullscreen();
+                }else if(elemento.webkitRequestFullscreen){
+                    elemento.webkitRequestFullscreen();
+
+                }else if(elemento.msrequestFullscreen){
+                    elemento.msrequestFullscreen();
+                }
+            }
+
+
+            ancho=screen.width;
+            altura=screen.height;
+            anchoSinBarra=screen.availWidth;
+            alturaSinBarra=screen.availHeight;
+            profundidadColor=screen.colorDepth;
+            profundidadColorBits=screen.pixelDepth;
+            orientacion=screen.orientation.type;
+            anguloOrientacion=screen.orientation.angle;
+            texto.innerHTML="<h1>Pantalla completa</h2><p>ancho:"+altura+"</p><p>altura:"+altura+"</p><p>ancho sin barras:"+anchoSinBarra+"</p><p>altura sin barras:"+alturaSinBarra+"</p><p>profundidad color:"+profundidadColor+"</p><p>profundidad en bits:"+profundidadColorBits+"</p><p>orientacion:"+orientacion+"</p><p>Angulo:"+anguloOrientacion+"</p>";
+        }
+    </script>
+</head>
+<body>
+    <p id="texto"></p>
+    
+</body>
+</html>
